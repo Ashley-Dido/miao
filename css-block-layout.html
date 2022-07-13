@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-block-layout</title>
+    <style>
+      body {
+        margin:0;
+      }
+
+      header {
+        background-color: black;
+        color: white;
+      }
+
+      .a {
+        width: 600px;
+        margin:auto;
+      }
+
+      .b {
+        width:600px;
+        margin: auto;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      .c {
+        margin: 0 auto;
+        width: 600px;
+        margin-bottom: 20px;
+      }
+
+      .c div {
+        width: 174px;
+        height: 34px;
+        xbox-sizing: border-box;
+        border: 3px solid;
+        background-color: pink;
+        text-align: center;
+        line-height: 34px;
+        margin-top: 15px;
+      }
+
+      .c div:hover {
+        background-color: red;
+      }
+
+      .c div:nth-child(n+5) {
+        margin-left: 210px;
+      }
+
+      .c div:nth-child(n+9) {
+        margin-left: 420px;
+      }
+
+      .c div:nth-child(4n+5) {
+        margin-top: -205px;
+      }
+
+      .d {
+       border: 1px dotted transparent;
+       border-bottom-color: black;
+       width: 600px;
+       margin: 0 auto;
+      }
+
+      .f {
+        border-color: transparent;
+      }
+
+      .e {
+        background-color: rgb(238,138,238);
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="a">hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</p>
+    </header>
+
+      <p class="b">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+
+      <div class="c">
+        <div>宽180高40(包含边框)</div>
+        <div>水平间隙30px</div>
+        <div>垂直间隙15px</div>
+        <div>边框宽度3px</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+      </div>
+
+        <p class="d">link</p>
+        <p class="d">link</p>
+        <p class="d">link</p>
+        <p class="d">link</p>
+        <p class="d f">link</p>
+
+
+        <p class="e">©版权所有<br>本页所有布局均使用块元素</p>
+  </body>
+
+</html>
