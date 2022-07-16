@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      min-width: 600px;
+    }
+    header > p {
+      margin: auto;
+      width: 600px;
+    }
+    section {
+      margin: 16px auto;
+      width: 600px;
+      overflow: hidden;
+    }
+
+    section div:first-child {
+      margin-bottom: 16px;
+    }
+
+    .u1{
+      list-style: none;
+      margin: -7.5px -15px;
+      padding: 0;
+      font-size: 0;
+    }
+
+    .u1 li {
+      border: 3px solid;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 180px;
+      height: 40px;
+      margin: 7.5px 15px;
+      font-size: 16px;
+      background-color: pink;
+      text-align: center;
+      line-height: 34px;
+    }
+
+    .u2 {
+      list-style: none;
+      padding: 0;
+      font-size: 0;
+      margin-top: 16px;
+    }
+    .u2 li {
+      border: 1px dotted transparent;
+      border-bottom-color: black;
+      width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+    .u2 li:last-child {
+      border-bottom-color: transparent;
+    }
+
+    .footer {
+      background-color: rgb(238,138,238);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</p>
+  </header>
+  <section>
+    <div>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</div>
+    <div>
+      <ul class="u1">
+        <li>高180高40(包含边框)</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>水平间隙30px</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>垂直间隙15px</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>边框宽度3px</li>
+        <li>产品</li>
+        <li>产品</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="u2">
+        <li>link</li>
+        <li>link</li>
+        <li>link</li>
+        <li>link</li>
+        <li>link</li>
+      </ul>
+    </div>
+  </section>
+  <p class="footer">©版权所有<br>本页布局有使用行内元素</p>
+</body>
+</html>
