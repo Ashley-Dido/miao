@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: rgb(33,37,43);
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    .menu {
+      padding: .5em;
+      background-color: rgb(40,44,52);
+    }
+    .menu li {
+      white-space: nowrap;
+      position: relative;
+    }
+    .menu > li{
+      position: relative;
+      display: inline-block;
+      color: rgb(87,93,101);
+      margin:0;
+      padding: 0 0.5em;
+    }
+    .menu > li:hover {
+      border-radius: 3px;
+      background:rgb(47,51,61);
+    }
+
+    .menu li:hover > ul {
+      display: block;
+    }
+
+    .menu ul {
+      display: none;
+      padding: 0.5em 1.5em;
+      line-height: 2;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      box-shadow: 0 0 5px #333;
+      background-color: rgb(28,30,34);
+      color:rgb(218,218,219);
+      width: 270px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .menu ul ul {
+      left: 100%;
+      top: -0.5em;
+      width: 300px;
+
+    }
+    .menu li:hover > ul {
+      display: block;
+    }
+    .menu li:hover {
+      background-color: rgb(43,48,57);
+    }
+    .menu li li {
+      padding: 0 100px 0 10px;
+    }
+    .menu li li > span {
+      position: absolute;
+      right: 10px;
+      top: 0;
+    }
+    .menu li > hr {
+      xmargin-left: -10px;
+      xmargin-right: -100px;
+      xborder: none;
+      xborder-top: 1px solid #606060;
+    }
+    li .sep {
+      border-top: 1px solid  #606060;
+      margin:0.5em -1.5em;
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+  <ul class="menu">
+    <li>文件(F)
+      <ul>
+        <li>新建文本文件 <span>Ctrl + N</span></li>
+        <li>新建文件...<span> Ctrl+ALt+Windows+N</span></li>
+        <li>新建窗口 <span>Ctrl+Shift+N</span></li>
+        <!-- <hr> -->
+        <li class="sep"></li>
+        <li>打开文件... <span>Ctrl+O</span></li>
+        <li>打开文件夹... <span>Ctrl+K Ctrl+O</span></li>
+        <li>从文件夹打开工作区...</li>
+        <li class="a">打开最近的文件<span>></span>
+          <ul>
+            <li>重新打开已关闭的编辑器 <span>Ctrl+Shift+T</span></li>
+            <li>作业</li>
+          </ul>
+        </li>
+        <li class="sep"></li>
+        <!-- <hr> -->
+        <li>将文件夹添加到工作区...</li>
+        <li>将工作区另存为...</li>
+        <li>保存 <span>Ctrl+S</span></li>
+        <li>全部保存 <span>Ctrl+K S</span></li>
+        <!-- <hr> -->
+        <li class="sep"></li>
+        <li class="a">共享
+          <ul>
+            <li>Copy vscode.dev Link</li>
+          </ul>
+        </li>
+        <!-- <hr> -->
+        <li class="sep"></li>
+        <li>自动保存</li>
+        <li  class="a">首选项
+          <ul>
+            <li>设置 Ctrl + ,</li>
+            <li>联机服务设置</li>
+            <li>遥测设置</li>
+            <li>扩展 <span>Ctrl+shift+X</span></li>
+          </ul>
+        </li>
+        <li class="sep"></li>
+        <li>还原文件</li>
+        <li>关闭编辑器 <span>Ctrl+F4</span></li>
+        <li>关闭文件夹 <span>Ctrl+K F</span></li>
+        <li>关闭窗口 <span>Alt+F4</span></li>
+        <!-- <hr> -->
+        <li class="sep"></li>
+        <li>退出</li>
+      </ul>
+    </li>
+    <li>编辑(E)
+      <ul>
+        <li>新建文本文件 Ctrl + N</li>
+        <li>新建文件... Ctrl + ALt + Windows + N</li>
+        <li>新建窗口 Ctrl + Shift +  N</li>
+        <hr>
+        <li>打开文件... Ctrl + O</li>
+        <li>打开文件夹... Ctrl + K Ctrl + O</li>
+        <li>从文件夹打开工作区...</li>
+        <li  class="a">打开最近的文件
+          <ul>
+            <li>重新打开已关闭的编辑器 Ctrl + Shift + T</li>
+            <li>作业</li>
+          </ul>
+        </li>
+        <li>将文件夹添加到工作区...</li>
+        <li>将工作区另存为...</li>
+        <li>保存 Ctrl + S</li>
+        <li>全部保存 Ctrl + K S</li>
+        <li class="a">共享
+          <ul>
+            <li>Copy vscode.dev Link</li>
+          </ul>
+        </li>
+        <li>自动保存</li>
+        <li  class="a">首选项
+          <ul>
+            <li>设置 Ctrl + ,</li>
+            <li>联机服务设置</li>
+            <li>遥测设置</li>
+            <li>扩展 Ctrl shift + X</li>
+          </ul>
+        </li>
+        <li>还原文件</li>
+        <li>关闭编辑器 Ctrl + F4</li>
+        <li>关闭文件夹 Ctrl + K F</li>
+        <li>关闭窗口 Alt + F4</li>
+        <li>退出</li>
+      </ul>
+    </li>
+    <li>选择(S)
+      <ul>
+        <li>新建文本文件 Ctrl + N</li>
+        <li>新建文件... Ctrl + ALt + Windows + N</li>
+        <li>新建窗口 Ctrl + Shift +  N</li>
+        <li>打开文件... Ctrl + O</li>
+        <li>打开文件夹... Ctrl + K Ctrl + O</li>
+        <li>从文件夹打开工作区...</li>
+        <li  class="a">打开最近的文件
+          <ul>
+            <li>重新打开已关闭的编辑器 Ctrl + Shift + T</li>
+            <li>作业</li>
+          </ul>
+        </li>
+        <li>将文件夹添加到工作区...</li>
+        <li>将工作区另存为...</li>
+        <li>保存 Ctrl + S</li>
+        <li>全部保存 Ctrl + K S</li>
+        <li class="a">共享
+          <ul>
+            <li>Copy vscode.dev Link</li>
+          </ul>
+        </li>
+        <li>自动保存</li>
+        <li  class="a">首选项
+          <ul>
+            <li>设置 Ctrl + ,</li>
+            <li>联机服务设置</li>
+            <li>遥测设置</li>
+            <li>扩展 Ctrl shift + X</li>
+          </ul>
+        </li>
+        <li>还原文件</li>
+        <li>关闭编辑器 Ctrl + F4</li>
+        <li>关闭文件夹 Ctrl + K F</li>
+        <li>关闭窗口 Alt + F4</li>
+        <li>退出</li>
+      </ul>
+    </li>
+    <li>查看(V)
+      <ul>
+        <li>新建文本文件 Ctrl + N</li>
+        <li>新建文件... Ctrl + ALt + Windows + N</li>
+        <li>新建窗口 Ctrl + Shift +  N</li>
+        <li>打开文件... Ctrl + O</li>
+        <li>打开文件夹... Ctrl + K Ctrl + O</li>
+        <li>从文件夹打开工作区...</li>
+        <li  class="a">打开最近的文件
+          <ul>
+            <li>重新打开已关闭的编辑器 Ctrl + Shift + T</li>
+            <li>作业</li>
+          </ul>
+        </li>
+        <li>将文件夹添加到工作区...</li>
+        <li>将工作区另存为...</li>
+        <li>保存 Ctrl + S</li>
+        <li>全部保存 Ctrl + K S</li>
+        <li class="a">共享
+          <ul>
+            <li>Copy vscode.dev Link</li>
+          </ul>
+        </li>
+        <li>自动保存</li>
+        <li  class="a">首选项
+          <ul>
+            <li>设置 Ctrl + ,</li>
+            <li>联机服务设置</li>
+            <li>遥测设置</li>
+            <li>扩展 Ctrl shift + X</li>
+          </ul>
+        </li>
+        <li>还原文件</li>
+        <li>关闭编辑器 Ctrl + F4</li>
+        <li>关闭文件夹 Ctrl + K F</li>
+        <li>关闭窗口 Alt + F4</li>
+        <li>退出</li>
+      </ul>
+    </li>
+    <li>转到(G)
+      <ul>
+        <li>新建文本文件 Ctrl + N</li>
+        <li>新建文件... Ctrl + ALt + Windows + N</li>
+        <li>新建窗口 Ctrl + Shift +  N</li>
+        <li>打开文件... Ctrl + O</li>
+        <li>打开文件夹... Ctrl + K Ctrl + O</li>
+        <li>从文件夹打开工作区...</li>
+        <li  class="a">打开最近的文件
+          <ul>
+            <li>重新打开已关闭的编辑器 Ctrl + Shift + T</li>
+            <li>作业</li>
+          </ul>
+        </li>
+        <li>将文件夹添加到工作区...</li>
+        <li>将工作区另存为...</li>
+        <li>保存 Ctrl + S</li>
+        <li>全部保存 Ctrl + K S</li>
+        <li class="a">共享
+          <ul>
+            <li>Copy vscode.dev Link</li>
+          </ul>
+        </li>
+        <li>自动保存</li>
+        <li  class="a">首选项
+          <ul>
+            <li>设置 Ctrl + ,</li>
+            <li>联机服务设置</li>
+            <li>遥测设置</li>
+            <li>扩展 Ctrl shift + X</li>
+          </ul>
+        </li>
+        <li>还原文件</li>
+        <li>关闭编辑器 Ctrl + F4</li>
+        <li>关闭文件夹 Ctrl + K F</li>
+        <li>关闭窗口 Alt + F4</li>
+        <li>退出</li>
+      </ul>
+    </li>
+  </ul>
+
+
+
+
+</body>
+</html>
