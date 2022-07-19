@@ -12,6 +12,7 @@
     }
     ul {
       list-style: none;
+      padding: 0;
       margin: 0;
     }
     .menu {
@@ -21,14 +22,13 @@
     .menu li {
       white-space: nowrap;
       position: relative;
+      padding: 0 .5em;
     }
-    .menu > li{
-      position: relative;
+    .menu > li {
       display: inline-block;
       color: rgb(87,93,101);
-      margin:0;
-      padding: 0 0.5em;
     }
+
     .menu > li:hover {
       border-radius: 3px;
       background:rgb(47,51,61);
@@ -40,7 +40,8 @@
 
     .menu ul {
       display: none;
-      padding: 0.5em 1.5em;
+      padding-top: .5em;
+      padding-bottom: .5em;
       line-height: 2;
       position: absolute;
       left: 0;
@@ -48,7 +49,6 @@
       box-shadow: 0 0 5px #333;
       background-color: rgb(28,30,34);
       color:rgb(218,218,219);
-      width: 270px;
       border-radius: 5px;
       font-size: 16px;
     }
@@ -80,7 +80,7 @@
     }
     li .sep {
       border-top: 1px solid  #606060;
-      margin:0.5em -1.5em;
+      margin:0.5em 0;
     }
   </style>
 </head>

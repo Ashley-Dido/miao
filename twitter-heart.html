@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    span {
+      display: inline-block;
+    }
+
+    #container {
+      margin: 0 auto;
+      width: 1200px;
+      position: relative;
+    }
+
+    .heart {
+      background: url(mao/1_MTZW1G1mE7LSX1CnhTYeHA.png) no-repeat;
+      height: 100px;
+      width: 100px;
+      cursor: pointer;
+      position: absolute;
+      left: 390px;
+      top: -10px;
+      background-position: 0 0;
+    }
+
+    .heart:hover {
+      background-position: -2800px 0;
+      transition: 1s steps(28);
+    }
+    .icon-reply {
+      background-image: url(mao/twitter1.png);
+      height: 100px;
+      width: 100px;
+      background-position: -20px 0;
+    }
+
+    .icon-retweet {
+      background-image: url(mao/twitter1.png);
+      height: 100px;
+      width: 100px;
+      background-position: -250px 0;
+    }
+
+    .icon-share {
+      background-image: url(mao/twitter1.png);
+      height: 100px;
+      width: 100px;
+      background-position: -830px 0;
+    }
+    .icon-Analytics {
+      background-image: url(mao/twitter1.png);
+      height: 100px;
+      width: 100px;
+      background-position: -1080px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="heart"></div>
+    <div>
+      <span class="icon-reply"></span>
+      <span class="icon-retweet"></span>
+      <span class="icon-share"></span>
+      <span class="icon-Analytics"></span>
+
+    </div>
+  </div>
+</body>
+</html>
