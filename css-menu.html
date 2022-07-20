@@ -39,7 +39,7 @@
     }
 
     .menu ul {
-      display: none;
+      xdisplay: none;
       padding-top: .5em;
       padding-bottom: .5em;
       line-height: 2;
@@ -52,32 +52,47 @@
       border-radius: 5px;
       font-size: 16px;
     }
+
+    .menu ul li {
+      display: none;
+    }
+
     .menu ul ul {
       left: 100%;
-      top: -0.5em;
+      top: 0.5em;
       width: 300px;
-
+      padding: 0;
     }
-    .menu li:hover > ul {
+
+    .menu li:hover > ul > li {
       display: block;
     }
     .menu li:hover {
       background-color: rgb(43,48,57);
     }
     .menu li li {
-      padding: 0 100px 0 10px;
+      padding: 0 100px 0 20px;
     }
     .menu li li > span {
       position: absolute;
-      right: 10px;
+      right: 30px;
       top: 0;
     }
-    .menu li > hr {
-      xmargin-left: -10px;
-      xmargin-right: -100px;
-      xborder: none;
-      xborder-top: 1px solid #606060;
+
+    .menu ul ul::before {
+      content: '>';
+      position: absolute;
+      left: -20px;
+      margin: 0;
+      padding: 0;
     }
+
+    /* .menu li > hr { */
+      /* margin-left: -10px; */
+      /* margin-right: -100px; */
+      /* border: none; 去掉hr四周边框 */
+      /* border-top: 1px solid #606060;优先级较高 */
+    /* } */
     li .sep {
       border-top: 1px solid  #606060;
       margin:0.5em 0;
@@ -91,20 +106,20 @@
       <ul>
         <li>新建文本文件 <span>Ctrl + N</span></li>
         <li>新建文件...<span> Ctrl+ALt+Windows+N</span></li>
-        <li>新建窗口 <span>Ctrl+Shift+N</span></li>
-        <!-- <hr> -->
+        <li>新建窗口  <!-- <hr> --><span>Ctrl+Shift+N</span></li>
+
         <li class="sep"></li>
         <li>打开文件... <span>Ctrl+O</span></li>
         <li>打开文件夹... <span>Ctrl+K Ctrl+O</span></li>
         <li>从文件夹打开工作区...</li>
-        <li class="a">打开最近的文件<span>></span>
+        <li class="a">打开最近的文件
           <ul>
             <li>重新打开已关闭的编辑器 <span>Ctrl+Shift+T</span></li>
             <li>作业</li>
           </ul>
         </li>
         <li class="sep"></li>
-        <!-- <hr> -->
+
         <li>将文件夹添加到工作区...</li>
         <li>将工作区另存为...</li>
         <li>保存 <span>Ctrl+S</span></li>
@@ -116,7 +131,7 @@
             <li>Copy vscode.dev Link</li>
           </ul>
         </li>
-        <!-- <hr> -->
+
         <li class="sep"></li>
         <li>自动保存</li>
         <li  class="a">首选项
@@ -132,7 +147,6 @@
         <li>关闭编辑器 <span>Ctrl+F4</span></li>
         <li>关闭文件夹 <span>Ctrl+K F</span></li>
         <li>关闭窗口 <span>Alt+F4</span></li>
-        <!-- <hr> -->
         <li class="sep"></li>
         <li>退出</li>
       </ul>
@@ -142,7 +156,6 @@
         <li>新建文本文件 Ctrl + N</li>
         <li>新建文件... Ctrl + ALt + Windows + N</li>
         <li>新建窗口 Ctrl + Shift +  N</li>
-        <hr>
         <li>打开文件... Ctrl + O</li>
         <li>打开文件夹... Ctrl + K Ctrl + O</li>
         <li>从文件夹打开工作区...</li>

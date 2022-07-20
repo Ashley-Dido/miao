@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
+  <style type="text/less">
 
     span {
       display: inline-block;
@@ -25,13 +25,12 @@
       position: absolute;
       left: 390px;
       top: -10px;
-      background-position: 0 0;
+      &:hover {
+        background-position: -2800px 0;
+        transition: 1s steps(28);
+      }
     }
 
-    .heart:hover {
-      background-position: -2800px 0;
-      transition: 1s steps(28);
-    }
     .icon-reply {
       background-image: url(mao/twitter1.png);
       height: 100px;
@@ -59,18 +58,55 @@
       background-position: -1080px 0;
     }
 
+    .heart2 {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      overflow: hidden;
+      img {
+        position: absolute;
+        left: 0;
+        &:hover {
+          left: -2800px;
+          /* auto和数字之间不能缓动 */
+          transition: 1s steps(28);
+        }
+      }
+    }
+
+    input {
+      display: none;
+      + .heart3 {
+        background: url(mao/1_MTZW1G1mE7LSX1CnhTYeHA.png) no-repeat;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        cursor: pointer;
+      }
+      &:checked + .heart3 {
+        background-position: -2800px 0;
+        transition: 1s steps(28);
+      }
+    }
+
   </style>
 </head>
 <body>
   <div id="container">
-    <div class="heart"></div>
-    <div>
-      <span class="icon-reply"></span>
-      <span class="icon-retweet"></span>
-      <span class="icon-share"></span>
-      <span class="icon-Analytics"></span>
 
+    <input type="checkbox" id="cb1" class="heart2">
+    <label for="cb1" class="heart3"></label>
+    <div class="heart"></div>
+    <div class="heart2">
+      <img src="mao/1_MTZW1G1mE7LSX1CnhTYeHA.png" alt="">
     </div>
-  </div>
+
+    <span class="icon-reply"></span>
+    <span class="icon-retweet"></span>
+    <span class="icon-share"></span>
+    <span class="icon-Analytics"></span>
+
+   </div>
+  <script src="https://cdn.jsdelivr.net/npm/less" ></script>
 </body>
 </html>

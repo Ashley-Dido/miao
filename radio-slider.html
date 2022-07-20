@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/less">
+    section {
+      position: relative;
+      input {
+        position: relative;
+        top: 480px;
+        z-index: 8;
+        display: none;
+        &:nth-child(1):checked ~ .imgs img:nth-child(1),
+        &:nth-child(2):checked ~ .imgs img:nth-child(2),
+        &:nth-child(3):checked ~ .imgs img:nth-child(3),
+        &:nth-child(4):checked ~ .imgs img:nth-child(4) {
+          left: 0;
+          opacity: 1;
+        }
+        &:nth-child(1):checked ~ .indicators label:nth-child(1),
+        &:nth-child(2):checked ~ .indicators label:nth-child(2),
+        &:nth-child(3):checked ~ .indicators label:nth-child(3),
+        &:nth-child(4):checked ~ .indicators label:nth-child(4) {
+          background-color: rgb(248,222,130);
+        }
+      }
+      .indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 0;
+        z-index: 8;
+        label {
+          margin: 15px;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color:grey;
+          cursor: pointer;
+          border-radius: 50%;
+          &:hover {
+            background-color: rgb(219,160,175);
+          }
+        }
+      }
+      .imgs {
+        position: relative;
+        width: 640px;
+        height: 480px;
+        display: inline-block;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: 1s;
+          position: absolute;
+        }
+      }
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <section>
+    <input type="radio" id="r1-1" name="radio1" checked>
+    <input type="radio" id="r1-2" name="radio1">
+    <input type="radio" id="r1-3" name="radio1">
+    <input type="radio" id="r1-4" name="radio1">
+
+    <div class="imgs">
+      <img src="mao/wallhaven-k7vd96_1280x960.png">
+      <img src="mao\wallhaven-rdxk2j_1280x960.png">
+      <img src="mao/wallhaven-r2z18q_1280x960.png">
+      <img src="mao/wallhaven-y8jx57_1280x960.png">
+    </div>
+
+    <div class="indicators">
+      <label for="r1-1"></label>
+      <label for="r1-2"></label>
+      <label for="r1-3"></label>
+      <label for="r1-4"></label>
+    </div>
+
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/less"></script>
+</body>
+</html>
