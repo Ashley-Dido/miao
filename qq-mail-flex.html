@@ -13,9 +13,6 @@
       section {
         display: flex;
         height: 100%;
-        width: 100%;
-        align-content: start;
-        justify-content: start;
         flex-flow: row wrap;
         header {
           width: 100%;
@@ -29,10 +26,10 @@
           overflow: auto;
         }
         main {
-          width: calc(100% - 200px);
+          flex: 1;
           height: calc(100% - 100px);
           background-color: teal;
-          overflow-y: scroll;
+          overflow-y: auto;
         }
       }
     }
