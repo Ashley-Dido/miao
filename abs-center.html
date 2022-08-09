@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/less">
+    .canvas-one {
+      height: 200px;
+      width: 200px;
+      background-color: rgb(212, 181, 143);
+      position: relative;
+      .one {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 30px;
+        width: 30px;
+        background-color: blue;
+        margin: auto;
+      }
+    }
+
+    .canvas-two {
+      height: 200px;
+      width: 200px;
+      display: table-cell;
+      background-color: rgb(219, 96, 137);
+      text-align: center;
+      .two {
+        height: 30px;
+        width: 30px;
+        background-color: blue;
+      }
+    }
+
+    .canvas-three {
+      height: 200px;
+      width: 200px;
+      background-color: rgb(212, 181, 143);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .three {
+        height: 30px;
+        width: 30px;
+        background-color: blue;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-one">
+    <div class="one"></div>
+  </div>
+
+  <div class="canvas-two">
+    <div class="two"></div>
+  </div>
+
+  <div class="canvas-three">
+    <div class="three"></div>
+  </div>
+
+  <script src="less.js"></script>
+</body>
+</html>

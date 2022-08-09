@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    section {
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 255px;
+  height: 255px;
+  animation: rgb-cube 5s infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rgb-cube {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+  50%{
+    transform: rotate(45deg) rotatex(-385deg) rotate(25deg);
+  }
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
+
+section > div {
+  height: 100%;
+  width: 100%;
+  xborder: 1px solid;
+  box-sizing: border-box;
+
+  position: absolute;
+}
+
+section div:nth-child(1) {
+  transform: translateZ(-127.5px) rotateY(180deg);
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_rg1.jpg);
+
+}
+
+section div:nth-child(2) {
+  transform: rotateY(-270deg) translateX(127.5px);
+  transform-origin: top right;
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_0gb.jpg);
+}
+
+section div:nth-child(3) {
+  transform: rotateY(270deg) translateX(-127.5px) rotateZ(270deg) translateX(-127.5px) translateY(127.5px);
+  transform-origin: center left;
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_1gb.jpg);
+}
+
+section div:nth-child(4) {
+  transform: rotateX(90deg) translateY(-127.5px) rotateZ(-90deg) translateX(-127.5px) translateY(-127.5px);
+  transform-origin: top center;
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_r1b.jpg);
+}
+
+section div:nth-child(5) {
+  transform: rotateX(-90deg) translateY(127.5px) rotateZ(180deg) translateY(255px);
+  transform-origin: bottom center;
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_r0b.jpg);
+}
+
+section div:nth-child(6) {
+  transform: translateZ(127.5px) rotateZ(270deg);
+  background-image: url(http://www.ritsumei.ac.jp/se/re/izumilab/lecture/07bmp/rgbcube_rg0.jpg);
+}
+
+  </style>
+</head>
+<body>
+  <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+</body>
+</html>

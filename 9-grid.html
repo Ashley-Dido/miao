@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/less">
+
+    .grid {
+      table-layout: fixed;
+      border-collapse: collapse;
+      tr, col {
+        border:2px solid  #0000F0;
+      }
+      th, td {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-weight: lighter;
+        cursor: pointer;
+        &:hover {
+          border: 2px solid red;
+        }
+      }
+    }
+    .wraper {
+      margin-top: 50px;
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 60px 60px 60px;
+        grid-template-rows: 60px 60px 60px;
+        grid-gap: 0;
+        li {
+          border: 2px solid #0000F0;
+          line-height: 60px;
+          text-align: center;
+          margin: -2px 0 0 -2px;
+          font-weight: lighter;
+          &:hover {
+            border-color: red;
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    .lg {
+      list-style: none;
+      padding: 0;
+      width: 225px;
+      margin: auto;
+      overflow:hidden;
+      padding-bottom: 5px;
+      li {
+        width: 50px;
+        height: 50px;
+        border: 5px solid blue;
+        float:left;
+        margin: 0 -5px -5px 0;
+        position: relative;
+        &:hover {
+          border: 5px solid red;
+          z-index: 9;
+        }
+      }
+      }
+
+      section {
+        display: flex;
+        flex-flow: wrap;
+        width:200px;
+        div {
+          width: 60px;
+          height: 60px;
+          border: 5px solid blue;
+          margin: 0px -5px -5px 0;
+          position:relative;
+          text-align: center;
+          line-height: 60px;
+          &:hover {
+            border: 5px solid red;
+            z-index: 9;
+          }
+        }
+      }
+
+  </style>
+</head>
+<body>
+  <table class="grid">
+    <col>
+    <col>
+    <col>
+    <thead>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="wraper">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+    </ul>
+  </div>
+
+
+  <ul class="lg">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <section>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/less"></script>
+</body>
+</html>
