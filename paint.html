@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="400"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条实线
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+         'rgb(255,255,0)'
+         '#ff00ff'
+        如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  // YOUR CODE GOES BELOW
+  // * 在 坐标 (42, 42) 画出一个点
+  dot(42, 42, "black")
+
+  //     * 画一条实线
+  for (var a = 0; a <= 300; a++ ) {
+    dot (a , 250, "powderblue")
+  }
+
+  //     * 画一条一个实点一个空点的虚线
+  //     * 画一条两个实点两个空点的虚线
+  for (var b = 0; b <= 500; b += 3) {
+    dot (b , 100, "pink")
+    dot (b + 2 , 100, "black")
+  }
+
+  //     * 画一条三个实点两个空点的虚线
+  for (var c = 3; c <= 500; c += 6) {
+
+    dot (c, 300, 'rgb(32,45,55)')
+    dot (c + 1, 300, 'pink')
+    dot (c + 2, 300, 'rgb(0,45,0)')
+  }
+
+
+  //     * 画一条45度的斜线
+
+
+  for (var d = 0; d <= 300; d++) {
+    var f = d
+    dot(f, d, "red")
+  }
+
+  //     * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+  for (var e = 0; e <= 300; e++) {
+    var g = e * Math.sqrt(3)/ 3
+    dot (e, g, "black")
+    //贴近X轴系数小于1，让X当变量 反之亦然
+  }
+
+
+  //     * 画一条跨越画布左上角和右下角的对角线
+
+
+  for (var acrossX = 0; acrossX <= 500; acrossX++) {
+    var acrossY = 4 / 5 * acrossX
+    dot(acrossX, acrossY, "black")
+  }
+
+  drawLine (1, 2, 100, 300, "blue")
+  function drawLine (ax, ay, bx, by, color) {
+    var dx = bx - ax
+    var dy = by - bx
+
+    var absDx = Math.abs(dx)
+    var absDy = Math.abs(dy)
+
+    if (absDx > absDy) {
+      var xstep = dx > 0 ? 1 : -1
+      var ystep = dy > 0 ? 1 : -1
+      var y = ay
+      var yp = 0
+      for (var x = ax; x != bx; x += xstep) {
+        dot(x, y, color)
+        yp += absDy
+        if (yp > absDx) {
+          y += ystep
+          yp -= absDx
+        }
+      }
+    } else {
+      var ystep = dy > 0 ? 1 : -1
+      var ystep = dx > 0 ? 1 : -1
+      var x = ax
+      var xp = 0
+      for (var y = ay; x != by; y += ystep) {
+        dot(x, y, color)
+        xp += absDx
+        if (xp > absDy) {
+          x += xstep
+          xp -= absDy
+        }
+      }
+    }
+  }
+
+  //     * 画一个空心矩形
+  for(var rectX = 100; rectX <= 300; rectX++) {
+    dot(rectX, 150, "red")
+    dot(rectX, 300, "red")
+    for (var rectY = 150; rectY <= 300; rectY++) {
+      dot(100, rectY, "red")
+      dot(300, rectY, "red")
+    }
+  }
+
+  //     * 画一个实心矩形
+
+  for (var rectXs = 0; rectXs <= 256; rectXs++) {
+    for (var rectYs = 0; rectYs <= 256; rectYs++) {
+      var color = 'rgb(255,' + rectXs  + ',' + rectYs + ")"
+      dot(rectXs / 5, rectYs / 5, color)
+    }
+  }
+
+
+  //     * 画两个个空心的圆，居中：
+  //       * 一个半径为50像素
+  //       * 一个半径为200像素
+
+
+
+  //     * 画一个实心的圆，半径至少为100像素
+  function drawCircle (cx, cy, r, color, fill) {
+    var x = 0
+    var y = r
+
+    while (x <= y) {
+      dot(x + cx, y + cy, color)
+      dot(x + cx, -y + cy, color)
+
+      if (fill) {
+        drawLine(x + cx, -y + cy, x + cx, y + cy, color)
+      }
+
+      dot(-x + cx, y + cy, color)
+      dot(-x + cx, -y + cy, color)
+
+      if (fill) {
+        drawLine(-x + cx, -y + cy, -x + cx, y + cy,color)
+      }
+
+      dot(y + cx, x + cy, color)
+      dot(-y + cx, x + cy, color)
+
+      if (fill) {
+        drawLine(y + cx, x + cy,-y + cx, x + cy, color)
+      }
+      dot(y + cx, -x + cy, color)
+      dot(-y + cx, -x + cy, color)
+
+      if (fill) {
+        drawLine(-y + cx, -x + cy, y + cx, -x + cy, color)
+      }
+
+      x++
+      var d1 = x * x + y * y
+      var d2 = x * x + (y - 1) * (y - 1)
+
+      if (Math.abs(d1 - r * r) > Math.abs(d2 - r * r)) {
+        y--
+      }
+    }
+  }
+
+
+
+  // var r = 50
+  // var x = 0
+  // var y = 0
+  // for (i = r; i > 0; i--) {
+  //   for (var t = 0; t < 6.30; t+=0.002) {
+  //   var x = i * Math.sin(t)
+  //   var y = i * Math.cos(t)
+
+  //   dot(x + 250, y + 250, 'blue')
+  //   }
+  // }
+
+
+
+
+
+
+
+
+  //     * 画一个【大小合适】的sin(x)的图像
+
+  //     * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+  //        'rgb(255,255,0)'
+  //        '#ff00ff'
+  //       如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+  //       可以考虑如下几种矩阵：
+  //          2 0
+  //          0 2
+  //          ------
+  //          1  0.27
+  //          0  1
+  //          ------
+  //          0.5    0.87
+  //          -0.87  0.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
