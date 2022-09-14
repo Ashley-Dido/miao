@@ -9,7 +9,7 @@ var Ashley_Dido = {
         arr1 = [];
       }
     }
-    if (arr1) {
+    if (arr1 !== []) {
       arr.push(arr1);
     }
     return arr;
