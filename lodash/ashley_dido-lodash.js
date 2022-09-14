@@ -9,7 +9,9 @@ var Ashley_Dido = {
         arr1 = [];
       }
     }
-    arr.push(arr1);
+    if (arr) {
+      arr.push(arr1);
+    }
     return arr;
   },
 };
