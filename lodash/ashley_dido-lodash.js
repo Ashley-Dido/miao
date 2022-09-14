@@ -14,4 +14,14 @@ var Ashley_Dido = {
     }
     return arr;
   },
+
+  compact: function (array) {
+    let filter = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        filter.push(array[i]);
+      }
+    }
+    return filter;
+  },
 };
