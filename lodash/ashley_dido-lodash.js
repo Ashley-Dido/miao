@@ -1,4 +1,4 @@
-var dido = {
+var ashley_dido = {
   chunk: function (array, size = 1) {
     let arr = [];
     let arr1 = [];
