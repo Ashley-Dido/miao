@@ -24,4 +24,14 @@ var ashley_dido = {
     }
     return filter;
   },
+
+  difference: function (array, values) {
+    let filter = [];
+    for (let key in array) {
+      if (!(key in values)) {
+        filter.push(key);
+      }
+    }
+    return filter;
+  },
 };
