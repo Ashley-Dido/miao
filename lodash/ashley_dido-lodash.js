@@ -63,6 +63,21 @@ var ashley_dido = (function () {
     return -1;
   }
 
+  function flatten(array) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      let item = array[i];
+      if (Array.isArray(item)) {
+        for (let j = 0; j < item.length; j++) {
+          result.push(item[j]);
+        }
+      } else {
+        result.push(item);
+      }
+    }
+    return result;
+  }
+
   return {
     chunk,
     compact,
@@ -70,7 +85,7 @@ var ashley_dido = (function () {
     drop,
     findIndex,
     findLastIndex,
-    // flatten,
+    flatten,
     // flattenDeep,
     // flattenDepth,
     // fromPairs,
