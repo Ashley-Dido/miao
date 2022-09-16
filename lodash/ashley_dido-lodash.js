@@ -143,6 +143,11 @@ var ashley_dido = (function () {
     return -1;
   }
 
+  function initial(array) {
+    array.pop();
+    return array.slice();
+  }
+
   return {
     chunk,
     compact,
@@ -157,7 +162,7 @@ var ashley_dido = (function () {
     head,
     indexOf,
     lastIndexOf,
-    // initial,
+    initial,
     // join,
     // last,
     // pull,
