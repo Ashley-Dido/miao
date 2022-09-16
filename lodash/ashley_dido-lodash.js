@@ -121,6 +121,23 @@ var ashley_dido = (function () {
     return;
   }
 
+  function head(array) {
+    if (array.length == 0) {
+      return undefined;
+    } else {
+      return array[0];
+    }
+  }
+
+  function indexOf(array, value, fromIndex = 0) {
+    for (let i = fromIndex; i < array.length; i++) {
+      if (array[i] === value) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   return {
     chunk,
     compact,
@@ -132,9 +149,9 @@ var ashley_dido = (function () {
     flattenDeep,
     flattenDepth,
     fromPairs,
-    // head,
-    // indexOf,
-    // lastIndexOf,
+    head,
+    indexOf,
+    lastIndexOf,
     // initial,
     // join,
     // last,
