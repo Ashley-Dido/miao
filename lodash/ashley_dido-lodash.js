@@ -41,22 +41,18 @@ var ashley_dido = (function () {
     return array;
   }
 
-  function findIndex(array, f = (it) => it, startIndex = 0) {
+  function findIndex(array, predicate, startIndex = 0) {
     for (let i = startIndex; i < array.length; i++) {
-      if (f(array[i])) {
+      if (predicate(array[i], i, array)) {
         return i;
       }
     }
     return -1;
   }
 
-  function findLastIndex(
-    array,
-    f = (it) => it,
-    startIndex = array.lenngth - 1
-  ) {
+  function findLastIndex(array, predicate, startIndex = array.lenngth - 1) {
     for (let i = startIndex; i >= 0; i--) {
-      if (f(array[i])) {
+      if (predicate(array[i], i, array)) {
         return i;
       }
     }
@@ -132,6 +128,15 @@ var ashley_dido = (function () {
   function indexOf(array, value, fromIndex = 0) {
     for (let i = fromIndex; i < array.length; i++) {
       if (array[i] === value) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function lastIndexOf(array, value, fromIndex = array.length - 1) {
+    for (let i = fromIndex; i >= 0; i--) {
+      if (array[i] == value) {
         return i;
       }
     }
