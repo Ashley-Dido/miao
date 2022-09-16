@@ -113,6 +113,14 @@ var ashley_dido = (function () {
     return result;
   }
 
+  function fromPairs(pairs) {
+    let obj = {};
+    for (let i = 0; i < pairs.length; i++) {
+      obj[pairs[i][0]] = pairs[i][1];
+    }
+    return;
+  }
+
   return {
     chunk,
     compact,
@@ -123,7 +131,7 @@ var ashley_dido = (function () {
     flatten,
     flattenDeep,
     flattenDepth,
-    // fromPairs,
+    fromPairs,
     // head,
     // indexOf,
     // lastIndexOf,
