@@ -33,7 +33,7 @@ var ashley_dido = (function () {
   }
 
   function drop(array, n = 1) {
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i <= n; i++) {
       if (i > 0) {
         array.shift();
       }
@@ -103,7 +103,7 @@ var ashley_dido = (function () {
       let item = array[i];
       if (Array.isArray(item)) {
         let flattenItem = flattenDepth(item, depth - 1);
-        for (let j = 0; j < flattenItem; j++) {
+        for (let j = 0; j < flattenItem.length; j++) {
           result.push(flattenItem[j]);
         }
       } else {
@@ -118,7 +118,7 @@ var ashley_dido = (function () {
     for (let i = 0; i < pairs.length; i++) {
       obj[pairs[i][0]] = pairs[i][1];
     }
-    return;
+    return obj;
   }
 
   function head(array) {
