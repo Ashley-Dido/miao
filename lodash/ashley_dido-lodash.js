@@ -78,6 +78,41 @@ var ashley_dido = (function () {
     return result;
   }
 
+  function flattenDeep(array) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      let item = array[i];
+      if (Array.isArray(item)) {
+        let flattenItem = flattenDeep(item);
+        for (let j = 0; j < flattenItem.length; j++) {
+          result.push(flattenItem[j]);
+        }
+      } else {
+        result.push(item);
+      }
+    }
+    return result;
+  }
+
+  function flattenDepth(array, depth = 1) {
+    if (depth == 0) {
+      return array.slice();
+    }
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      let item = array[i];
+      if (Array.isArray(item)) {
+        let flattenItem = flattenDepth(item, depth - 1);
+        for (let j = 0; j < flattenItem; j++) {
+          result.push(flattenItem[j]);
+        }
+      } else {
+        result.push(item);
+      }
+    }
+    return result;
+  }
+
   return {
     chunk,
     compact,
@@ -86,8 +121,8 @@ var ashley_dido = (function () {
     findIndex,
     findLastIndex,
     flatten,
-    // flattenDeep,
-    // flattenDepth,
+    flattenDeep,
+    flattenDepth,
     // fromPairs,
     // head,
     // indexOf,
