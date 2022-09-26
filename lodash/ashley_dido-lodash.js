@@ -41,7 +41,7 @@ var ashley_dido = (function () {
     return array;
   }
 
-  function findIndex(array, predicate, startIndex = 0) {
+  function findIndex(array, predicate = (x) => x, startIndex = 0) {
     for (let i = startIndex; i < array.length; i++) {
       if (predicate(array[i], i, array)) {
         return i;
@@ -50,7 +50,11 @@ var ashley_dido = (function () {
     return -1;
   }
 
-  function findLastIndex(array, predicate, startIndex = array.lenngth - 1) {
+  function findLastIndex(
+    array,
+    predicate = (x) => x,
+    startIndex = array.lenngth - 1
+  ) {
     for (let i = startIndex; i >= 0; i--) {
       if (predicate(array[i], i, array)) {
         return i;
