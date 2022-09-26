@@ -148,6 +148,32 @@ var ashley_dido = (function () {
     return array.slice();
   }
 
+  function join(array, separator = ",") {
+    let str = "";
+    for (let i = 0; i < array.length - 1; i++) {
+      str += array[i] + separator;
+    }
+    return str + array[-1];
+  }
+
+  function last(array) {
+    if (array.length == 0) {
+      return [];
+    } else {
+      return array[-1];
+    }
+  }
+
+  function pull(array, ...value) {
+    let values = [...value];
+    for (var i = 0; i < array.length; i++) {
+      if (values.includes(array[i])) {
+        array.splice(i, 1);
+      }
+    }
+    return array;
+  }
+
   return {
     chunk,
     compact,
@@ -163,9 +189,9 @@ var ashley_dido = (function () {
     indexOf,
     lastIndexOf,
     initial,
-    // join,
-    // last,
-    // pull,
+    join,
+    last,
+    pull,
     // reverse,
     // every,
     // some,
