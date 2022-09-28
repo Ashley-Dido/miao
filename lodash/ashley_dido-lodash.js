@@ -41,9 +41,9 @@ var ashley_dido = (function () {
     return array;
   }
 
-  function findIndex(array, predicate = (x) => x, startIndex = 0) {
+  function findIndex(array, predicate, startIndex = 0) {
     for (let i = startIndex; i < array.length; i++) {
-      if (predicate(array[i], i, array)) {
+      if (predicate(array[i])) {
         return i;
       }
     }
@@ -56,7 +56,7 @@ var ashley_dido = (function () {
     startIndex = array.lenngth - 1
   ) {
     for (let i = startIndex; i >= 0; i--) {
-      if (predicate(array[i], i, array)) {
+      if (predicate(array[i])) {
         return i;
       }
     }
@@ -178,6 +178,24 @@ var ashley_dido = (function () {
     return array;
   }
 
+  function every(array, predicate) {
+    for (let i = 0; i < array.length; i++) {
+      if (!predicate(array[i], i, array)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function some(array, predicate) {
+    for (let i = 0; i < array.length; i++) {
+      if (predicate(array[i], i, array)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   return {
     chunk,
     compact,
@@ -197,8 +215,8 @@ var ashley_dido = (function () {
     last,
     pull,
     // reverse,
-    // every,
-    // some,
+    every,
+    some,
     // countBy,
     // groupBy,
     // keyBy,
